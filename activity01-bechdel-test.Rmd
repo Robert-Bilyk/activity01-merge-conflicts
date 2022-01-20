@@ -1,6 +1,6 @@
 ---
 title: "Bechdel Test"
-author: "Name"
+author: "Robert Bilyk"
 output: github_document
 ---
 
@@ -49,7 +49,7 @@ bechdel90_13
 
 How many movies are there?
 
-**Response**: 
+There are 10 movies
 
 
 The financial variables that we will focus on are:
@@ -74,7 +74,7 @@ bechdel90_13 %>%
 
 What patterns do you notice?
 
-**Response**: 
+Movies failing the Bechdel test tend to have higher budgets as well as gross both international and domestic. International gross is larger than domestic gross and overall gross is over the budgets. 
 
 
 Next, we will take a look at how median budget and median gross vary by a more granular (detailed) indicator of the Bechdel test result (where `ok` = passes test, `dubious`, `men` = women only talk about men, `notalk` = women don't talk to each other, `nowomen` = fewer than two women).
@@ -89,7 +89,7 @@ bechdel90_13 %>%
 
 What patterns do you notice?
 
-**Response**: 
+Movies with little to no women and movies that pass the Bechdel test tends to have lower budgets and gross overall. Movies with women that onlt talk about men and not to each other tend to make the most money and have the largest budgets.: 
 
 
 In order to evaluate how return on investment varies among movies that pass and fail the Bechdel test, we first create a new variable called `roi` as the ratio of the gross to budget.
@@ -98,7 +98,7 @@ Update the missing variable (i.e., replace the `___` after the minus sign with t
 
 ```{r}
 bechdel90_13 <- bechdel90_13 %>%
-  mutate(roi = (intgross_2013 + domgross_2013 - ___) / budget_2013)
+  mutate(roi = (intgross_2013 + domgross_2013 - budget_2013) / budget_2013)
 ```
 
 Now we can see which movies have the highest return on investment.
@@ -135,7 +135,6 @@ ggplot(data = bechdel90_13, mapping = aes(x = clean_test, y = roi, color = binar
 
 What patterns do you notice?
 
-**Response**:
-
+Movies passing the test tend to have a larger deviation over the movies that don't pass. The mean for passing movies as well as ones that are dubious and men tend to all be rather similar. Also dubious, notalk, and nowomen all have outliers.
 
 Go back to the `README` document
